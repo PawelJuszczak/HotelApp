@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Scanner;
+
 public class Hotel {
 	
 	private Room[] rooms;
@@ -18,7 +20,12 @@ public class Hotel {
 		this.numberOfRooms = numberOfRooms;
 	}
 	public void createHotel(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Insert number of rooms in your Hotel: ");
+		numberOfRooms = sc.nextInt();
 		rooms = new Room[numberOfRooms];
+		System.out.println("Your hotel have " + numberOfRooms + " rooms.");
+		sc.close();
 	}
 	
 	
