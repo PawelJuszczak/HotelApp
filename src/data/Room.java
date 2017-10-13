@@ -4,13 +4,13 @@ package data;
 
 public class Room {
 	private int numberOfBeds;
-	private StandardLevel standardLevel;
+	private String standardLevel;
 	private int floorNumber;
 	private String price;
 	private String name;
 	private boolean status;
 	
-	public Room(int numberOfBeds, StandardLevel standardLevel, int floorNumber, String price, 
+	public Room(int numberOfBeds, String standardLevel, int floorNumber, String price, 
 			String name, boolean status){
 		this.numberOfBeds = numberOfBeds;
 		this.standardLevel = standardLevel;
@@ -29,10 +29,10 @@ public class Room {
 	public void setNumberOfBeds(int numberOfBeds) {
 		this.numberOfBeds = numberOfBeds;
 	}
-	public StandardLevel getStandardLevel() {
+	public String getStandardLevel() {
 		return standardLevel;
 	}
-	public void setStandardLevel(StandardLevel standardLevel) {
+	public void setStandardLevel(String standardLevel) {
 		this.standardLevel = standardLevel;
 	}
 	public int getFloorNumber() {
