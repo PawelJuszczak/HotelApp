@@ -2,12 +2,14 @@ package data;
 
 public class ExtendedRoom extends Room{
 
+	
 	private boolean tv = true;
 	private boolean wifi = true;
 	private boolean balcony = false;
 	
-	public ExtendedRoom(int numberOfBeds, int floorNumber, String price, String name, boolean status) {
-		super(numberOfBeds, floorNumber, price, name, status);
+	public ExtendedRoom(String name, int numberOfBeds, int floorNumber, String price, boolean status,
+			String roomNumber) {
+		super(name, numberOfBeds, floorNumber, price, status, roomNumber);
 		// TODO Auto-generated constructor stub
 	}
 

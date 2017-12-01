@@ -3,23 +3,25 @@ package data;
 
 
 public class Room {
+	private String name;
 	private int numberOfBeds;
 	private int floorNumber;
 	private String price;
-	private String name;
 	private boolean status;
+	private String roomNumber;
 	
-	public Room(int numberOfBeds, int floorNumber, String price, 
-			String name, boolean status){
+	public Room(String name,int numberOfBeds, int floorNumber, String price, 
+			 boolean status, String roomNumber){
 		this.numberOfBeds = numberOfBeds;
 		this.floorNumber = floorNumber;
 		this.price = price;
 		this.name = name;
-		this.status = status;	
+		this.status = status;
+		this.roomNumber = roomNumber;
 	}
 	public Room(Room room){
-		this(room.getNumberOfBeds(), room.getFloorNumber(), 
-				room.getPrice(), room.getName(), room.isStatus());
+		this(room.getName(), room.getNumberOfBeds(), room.getFloorNumber(), 
+				room.getPrice(), room.isStatus(), room.getRoomNumber());
 	}
 	public int getNumberOfBeds() {
 		return numberOfBeds;
@@ -51,6 +53,12 @@ public class Room {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
+	public String getRoomNumber() {
+		return roomNumber;
+	}
+	public void setRoomNumber(String roomNumber) {
+		this.roomNumber = roomNumber;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -59,6 +67,7 @@ public class Room {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + numberOfBeds;
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
+		result = prime * result + ((roomNumber == null) ? 0 : roomNumber.hashCode());
 		result = prime * result + (status ? 1231 : 1237);
 		return result;
 	}
@@ -85,33 +94,22 @@ public class Room {
 				return false;
 		} else if (!price.equals(other.price))
 			return false;
+		if (roomNumber == null) {
+			if (other.roomNumber != null)
+				return false;
+		} else if (!roomNumber.equals(other.roomNumber))
+			return false;
 		if (status != other.status)
 			return false;
 		return true;
 	}
-	
-	public void printStatus(){
-		if(status == false){
-			System.out.println("Room is available!");
-		}else{
-			System.out.println("Room is taken.");
-		}
-	}
 	@Override
 	public String toString() {
-		StringBuilder print = new StringBuilder(32);
-		print.append(getNumberOfBeds());
-		print.append("\n");
-		print.append(getFloorNumber());
-		print.append("\n");
-		print.append(getPrice());
-		print.append("\n");
-		print.append(getName());
-		print.append("\n");
-		print.append(isStatus());
-		return print.toString();
-		
+		return  name + "\nNumber of beds: " + numberOfBeds + "\nFloor number: " + floorNumber + "\nPrice: " + price + "\nRoom number: " + roomNumber;
 	}
+	
+
+
 	
 
 }
