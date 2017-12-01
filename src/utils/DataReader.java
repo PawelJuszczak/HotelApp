@@ -30,8 +30,6 @@ public class DataReader {
 		System.out.println("Set number of beds: ");
 		int numberOfBeds = sc.nextInt();
 		sc.nextLine();
-		System.out.println("Set standard level: ");
-		String standardLevel = sc.nextLine();
 		System.out.println("Set floor number: ");
 		int floorNumber = sc.nextInt();
 		sc.nextLine();
@@ -42,7 +40,7 @@ public class DataReader {
 		System.out.println("Set status: ");
 		boolean status = sc.nextBoolean();
 		
-		return new Room(numberOfBeds, standardLevel, floorNumber, price, name, status);
+		return new Room(numberOfBeds, floorNumber, price, name, status);
 	}
 	public Hotel readAndCreateHotel(){
 		System.out.println("Insert number of rooms in your Hotel: ");

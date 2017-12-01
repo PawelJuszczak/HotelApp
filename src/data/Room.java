@@ -4,23 +4,21 @@ package data;
 
 public class Room {
 	private int numberOfBeds;
-	private String standardLevel;
 	private int floorNumber;
 	private String price;
 	private String name;
 	private boolean status;
 	
-	public Room(int numberOfBeds, String standardLevel, int floorNumber, String price, 
+	public Room(int numberOfBeds, int floorNumber, String price, 
 			String name, boolean status){
 		this.numberOfBeds = numberOfBeds;
-		this.standardLevel = standardLevel;
 		this.floorNumber = floorNumber;
 		this.price = price;
 		this.name = name;
 		this.status = status;	
 	}
 	public Room(Room room){
-		this(room.getNumberOfBeds(), room.getStandardLevel(), room.getFloorNumber(), 
+		this(room.getNumberOfBeds(), room.getFloorNumber(), 
 				room.getPrice(), room.getName(), room.isStatus());
 	}
 	public int getNumberOfBeds() {
@@ -28,12 +26,6 @@ public class Room {
 	}
 	public void setNumberOfBeds(int numberOfBeds) {
 		this.numberOfBeds = numberOfBeds;
-	}
-	public String getStandardLevel() {
-		return standardLevel;
-	}
-	public void setStandardLevel(String standardLevel) {
-		this.standardLevel = standardLevel;
 	}
 	public int getFloorNumber() {
 		return floorNumber;
@@ -67,7 +59,6 @@ public class Room {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + numberOfBeds;
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
-		result = prime * result + ((standardLevel == null) ? 0 : standardLevel.hashCode());
 		result = prime * result + (status ? 1231 : 1237);
 		return result;
 	}
@@ -94,11 +85,6 @@ public class Room {
 				return false;
 		} else if (!price.equals(other.price))
 			return false;
-		if (standardLevel == null) {
-			if (other.standardLevel != null)
-				return false;
-		} else if (!standardLevel.equals(other.standardLevel))
-			return false;
 		if (status != other.status)
 			return false;
 		return true;
@@ -115,8 +101,6 @@ public class Room {
 	public String toString() {
 		StringBuilder print = new StringBuilder(32);
 		print.append(getNumberOfBeds());
-		print.append("\n");
-		print.append(getStandardLevel());
 		print.append("\n");
 		print.append(getFloorNumber());
 		print.append("\n");
