@@ -42,11 +42,6 @@ public class Hotel {
 		superiorTriples[0] = new SuperiorRoom("Superior Triple",3,3,"99.99",false,"304");
 		superiorTriples[1] = new SuperiorRoom("Superior Triple",3,3,"99.99",false,"305");
 	}
-	public void printRooms(){
-		for(int i=0; i<2; i++){
-			System.out.println(standardSingles[i]);
-		}
-	}
 	
 	
 }

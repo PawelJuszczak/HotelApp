@@ -105,7 +105,8 @@ public class Room {
 	}
 	@Override
 	public String toString() {
-		return  name + "\nNumber of beds: " + numberOfBeds + "\nFloor number: " + floorNumber + "\nPrice: " + price + "\nRoom number: " + roomNumber;
+		return  name + "\nNumber of beds: " + numberOfBeds + "\nFloor number: " + floorNumber 
+				+ "\nPrice: " + price + "\nRoom number: " + roomNumber;
 	}
 	
 
